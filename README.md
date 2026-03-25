@@ -1,13 +1,12 @@
 # filter
 
-[![Deploy to GitHub Pages](https://github.com/gushchinvadim/filter/actions/workflows/deploy.yml/badge.svg)](https://github.com/gushchinvadim/filter/actions/workflows/deploy.yml)
-
-React + Vite project with functional and class-based components.
-
 ### 🔗 Live Demo
 
 [![🚀 Live Demo](https://img.shields.io/badge/🚀_Live-Demo-2ea44f?style=for-the-badge)](https://gushchinvadim.github.io/filter/)
 
+[![Deploy to GitHub Pages](https://github.com/gushchinvadim/filter/actions/workflows/deploy.yml/badge.svg)](https://github.com/gushchinvadim/filter/actions/workflows/deploy.yml)
+
+React + Vite project with functional and class-based components.
 
 # React + Vite
 
