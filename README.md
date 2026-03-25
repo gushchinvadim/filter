@@ -4,7 +4,9 @@
 
 React + Vite project with functional and class-based components.
 
-🔗 **Live demo**: https://gushchinvadim.github.io/filter/
+### 🔗 Live Demo
+
+[![🚀 Live Demo](https://img.shields.io/badge/🚀_Live-Demo-2ea44f?style=for-the-badge)](https://gushchinvadim.github.io/filter/)
 
 
 # React + Vite
@@ -23,4 +25,4 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# filter
+
