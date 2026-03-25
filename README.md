@@ -1,3 +1,12 @@
+# filter
+
+[![Deploy to GitHub Pages](https://github.com/gushchinvadim/filter/actions/workflows/deploy.yml/badge.svg)](https://github.com/gushchinvadim/filter/actions/workflows/deploy.yml)
+
+React + Vite project with functional and class-based components.
+
+🔗 **Live demo**: https://gushchinvadim.github.io/filter/
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

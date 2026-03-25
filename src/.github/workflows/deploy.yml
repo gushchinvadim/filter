@@ -1,0 +1,65 @@
+# .github/workflows/deploy.yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:  # ← Добавил ручной запуск для удобства
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'  # ← ✅ Исправлено: было '20', теперь '22'
+          cache: 'yarn'
+
+      - name: Show environment info  # ← 🔍 Для отладки
+        run: |
+          node -v
+          yarn -v
+          echo "Yarn lockfile exists: $(test -f yarn.lock && echo yes || echo no)"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build project
+        run: yarn build
+
+      - name: Verify build output  # ← 🔍 Проверка, что dist/ создан
+        run: |
+          ls -la dist/
+          test -d dist/img && echo "✅ Images folder exists" || echo "⚠️ Images folder missing"
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
